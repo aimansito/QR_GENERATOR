@@ -8,10 +8,13 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 /**
@@ -28,8 +31,7 @@ public class PanelRadio extends JPanel {
     private JLabel lblUrl, lblFichero;
     private JTextField tfUrl, tfFichero;
     private String nombreFichero;
-    private PanelFichero panel;
-    private JComboBox combo; 
+    private PanelFichero panel; 
 
     // Constructor 
     public PanelRadio() {
@@ -60,16 +62,21 @@ public class PanelRadio extends JPanel {
         tfFichero = new JTextField(40);
         this.add(tfFichero);
 
-        // Añade el botón generar
-        btnGenerar = new JButton("Generar código QR");
-        this.add(btnGenerar);
         
+        JRadioButton jpgButton = new JRadioButton("JPG");
+        JRadioButton pngButton = new JRadioButton("PNG");
+
+        // Agrupa los botones de radio para que solo se pueda seleccionar uno a la vez
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(jpgButton);
+        buttonGroup.add(pngButton);
+
+        // Añade los botones de radio al panel
+        panel.add(jpgButton);
+        panel.add(pngButton);
+
+        // Añade el panel a la ventana
         
-        //añadir panel 
-        combo = new JComboBox();
-        combo.addItem("jpg");
-        combo.addItem("png");
-        this.add(combo);
         // Comportamiento del botón generar
         btnGenerar.addActionListener(new ActionListener() {
             @Override
