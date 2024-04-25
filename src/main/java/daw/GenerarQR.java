@@ -11,6 +11,9 @@ package daw;
  */
 public class GenerarQR {
     public static void main(String[] args) {
+           // Ventana con JCombobox
            VentanaPrincipal v1 = new VentanaPrincipal();
+           //Ventana con JRadioButton
+           
     }
 }
