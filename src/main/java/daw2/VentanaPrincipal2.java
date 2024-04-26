@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package daw;
+package daw2;
 
 import javax.swing.JFrame;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
@@ -11,19 +11,19 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
  *
  * @author aiman
  */
-public class VentanaPrincipal extends JFrame{
-    // Tamaño de la ventana. Constantes
+public class VentanaPrincipal2 extends JFrame {
+     // Tamaño de la ventana. Constantes
     public static final int ANCHO_FRAME = 600;
     public static final int ALTO_FRAME = 200;
    
     // Atributos
-    private Panel panel;
+    private PanelRadio panel;
     
     // Constructor de la clase 
-    public VentanaPrincipal(){
+    public VentanaPrincipal2(){
         crearVentana();
         // Incializa el atributo de tipo Panel
-        Panel panel = new Panel();
+        PanelRadio panel = new PanelRadio();
         // Añade el panel a la ventana
         this.add(panel);
         // Cuando todos los elementos están creados se hace visible la ventana

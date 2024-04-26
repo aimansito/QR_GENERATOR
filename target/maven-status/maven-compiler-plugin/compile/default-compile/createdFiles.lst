@@ -1,8 +1,14 @@
-daw/Panel$1.class
 daw/QR.class
-daw/PanelFichero.class
 daw/VentanaResultado.class
 daw/Panel.class
+daw2/PanelRadio$1.class
+daw2/VentanaResultado.class
+daw/Panel$1.class
+daw/PanelFichero.class
+daw2/GenerarQR_Radio.class
+daw2/PanelRadio.class
+daw2/VentanaPrincipal2.class
+daw2/PanelRadio$2.class
 daw/Panel$2.class
 daw/GenerarQR.class
 daw/VentanaPrincipal.class

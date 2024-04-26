@@ -19,7 +19,8 @@ import javax.swing.JTextField;
  *
  * @author aiman
  */
-public class Panel extends JPanel{
+public class Panel extends JPanel {
+
     // Tamaño del panel. Constantes
     public static final int ANCHO_PANEL = 600;
     public static final int ALTO_PANEL = 200;
@@ -30,7 +31,7 @@ public class Panel extends JPanel{
     private JTextField tfUrl, tfFichero;
     private String nombreFichero;
     private PanelFichero panel;
-    private JComboBox combo; 
+    private JComboBox combo;
 
     // Constructor 
     public Panel() {
@@ -64,27 +65,26 @@ public class Panel extends JPanel{
         // Añade el botón generar
         btnGenerar = new JButton("Generar código QR");
         this.add(btnGenerar);
-        
-        
+
         //añadir panel 
         combo = new JComboBox();
-        combo.addItem("jpg");
         combo.addItem("png");
+        combo.addItem("jpg");
         this.add(combo);
         // Comportamiento del botón generar
         btnGenerar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 // Si el contenido de los textField no está vacío
-                if (!tfUrl.getText().isEmpty()&&!tfFichero.getText().isEmpty()){
+                if (!tfUrl.getText().isEmpty() && !tfFichero.getText().isEmpty()) {
                     // Genera el fichero con la imagen del QR
                     // El fichero se genera en la raíz del proyecto
-                    if(combo.getSelectedItem().toString().equalsIgnoreCase(".png")){
-                        QR.escribirQR(tfUrl.getText(), tfFichero.getText()+".png",combo.getSelectedItem().toString());
-                    new VentanaResultado(tfFichero.getText()+".png");
-                    }else{
-                        QR.escribirQR(tfUrl.getText(), tfFichero.getText()+".jpg",combo.getSelectedItem().toString());
-                    new VentanaResultado(tfFichero.getText()+".jpg");
+                    if (combo.getSelectedItem().toString().equalsIgnoreCase("png")) {
+                        QR.escribirQR(tfUrl.getText(), tfFichero.getText() + ".png", combo.getSelectedItem().toString());
+                        new VentanaResultado(tfFichero.getText() + ".png");
+                    } else if (combo.getSelectedItem().toString().equalsIgnoreCase("jpg")) {
+                        QR.escribirQR(tfUrl.getText(), tfFichero.getText() + ".jpg", combo.getSelectedItem().toString());
+                        new VentanaResultado(tfFichero.getText() + ".jpg");
                     }
                 } else {
                     JOptionPane.showMessageDialog(null, "No puede haber campos vacíos.");
